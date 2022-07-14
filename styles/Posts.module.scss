@@ -1,0 +1,42 @@
+@import "./variables";
+
+.styledPost {
+  min-height: 91vh;
+  width: 100%;
+  background: $shadow-color;
+}
+
+.styledSearch {
+  min-height: 7vh;
+  background-color: white;
+  display: flex;
+  img {
+    width: 1.6rem;
+    height: 1.6rem;
+    opacity: 0.8;
+  }
+  .search {
+    position: relative;
+    width: 70rem;
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0.6rem 3rem;
+      font-size: 1.3rem;
+      border: none;
+      outline: none;
+    }
+    img {
+      position: absolute;
+      left: 1%;
+      top: 50%;
+      transform: translate(-1%, -50%);
+    }
+  }
+  .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
