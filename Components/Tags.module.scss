@@ -1,0 +1,31 @@
+@import "../styles/variables";
+
+.tags {
+  width: 20%;
+  min-height: 80vh;
+  margin: 0rem auto;
+  .name {
+    display: flex;
+    justify-content: center;
+  }
+  .icon {
+    color: $primary-color;
+    font-size: 2.2rem;
+  }
+  h1 {
+    margin: 0rem 0.5rem 2rem 0.5rem;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.items {
+  h4 {
+    font-weight: 500;
+    display: inline-block;
+    background: white;
+    padding: 0.3rem 0.4rem;
+    margin: 0.2rem;
+    border-left: 5px solid $primary-color;
+  }
+}

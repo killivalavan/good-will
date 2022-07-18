@@ -1,0 +1,22 @@
+.filter {
+  display: flex;
+  width: 90%;
+  margin: 1rem auto;
+  font-weight: 500;
+  font-size: 0.8rem;
+
+  //   To hide last span
+  .filterBtn:last-child span {
+    display: none;
+  }
+  span {
+    margin: 1rem;
+    opacity: 0.6;
+  }
+  a {
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
