@@ -1,0 +1,127 @@
+@import "./variables";
+
+.content {
+  .backBtn {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 5rem;
+    margin: auto;
+  }
+  h2 {
+    margin-left: 3rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+  span {
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.card {
+  width: 80%;
+  margin: auto;
+  min-height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  //   align-items: center;
+  justify-content: space-between;
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    outline: 2px solid $grey-color;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    &:focus {
+      outline: 2px solid $primary-color;
+      box-shadow: $primary-color 0px 1px 4px;
+    }
+    &::-webkit-input-placeholder {
+      font-family: "Encode Sans", sans-serif;
+    }
+  }
+  textarea {
+    margin-bottom: 0.8rem;
+    resize: none;
+  }
+}
+
+.comFlex {
+  height: 50vh;
+  width: 20rem;
+  flex: 1 1 15rem;
+}
+
+.leftDiv {
+}
+
+.centerDiv {
+  margin-right: 5rem;
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.rightDiv {
+  .downDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0rem;
+    .downLeftDiv {
+      margin-right: 1rem;
+    }
+  }
+  .street {
+    margin-top: 2rem;
+    display: block;
+  }
+  .landmark {
+    margin: 1rem 0rem;
+  }
+}
+
+.location {
+  p {
+    margin-bottom: 1rem;
+  }
+  button {
+    display: block;
+    width: 100%;
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+  }
+  small {
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $secondary-color;
+  border: none;
+  padding: 0.5rem 3rem;
+  font-size: 1.3rem;
+  margin: 2rem auto;
+  border-radius: 25px;
+  span {
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .leftDiv {
+    // order: 3;
+  }
+}

@@ -67,15 +67,26 @@
 }
 
 .dropdown {
-  select {
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    option {
-      border: none;
-      padding: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  background-color: white;
+  cursor: pointer;
+  div {
+    padding: 0.9rem 1.5rem;
+    &:hover {
+      background: $primary-color;
+      color: white;
     }
   }
+}
+
+.dropdownList[disabled] {
+  display: none;
 }
 
 .content {

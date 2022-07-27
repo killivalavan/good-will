@@ -1,0 +1,118 @@
+@import "./variables";
+
+.background {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Encode Sans", sans-serif;
+  background-image: url("/Images/bg1.png"), url("/Images/bg2.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 70% 1%, 100% 100%;
+  background-size: 15rem;
+}
+
+.background nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  min-height: 12vh;
+  margin: auto;
+
+  .login {
+    display: flex;
+    align-items: center;
+    p {
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    button {
+      font-size: 1rem;
+      font-weight: 2rem;
+      padding: 0.3rem 0.8rem;
+      border: 3px solid $secondary-color;
+      border-radius: 30px;
+      color: $secondary-color;
+      background: transparent;
+      text-transform: capitalize;
+      color: black;
+      background: $secondary-color;
+      margin-left: 1rem;
+      a {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  padding: 2rem;
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.leftDiv {
+  margin-left: 2rem;
+  width: 40%;
+  p {
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  .logo {
+    color: black;
+    float: left;
+  }
+  .image {
+    img {
+      margin-bottom: 0.7rem;
+      width: 28rem;
+    }
+  }
+}
+
+.rightDiv {
+  width: 40%;
+  //   margin: auto;
+  margin-right: 5rem;
+  h1 {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  form {
+    margin-top: 2rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      label {
+        margin: 0.6rem 0rem;
+      }
+      input {
+        border: none;
+        border-radius: 5px;
+        padding: 0.9rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        &:focus {
+          outline-color: $primary-color;
+        }
+      }
+    }
+    button {
+      width: 100%;
+      margin-top: 2rem;
+      padding: 0.5rem;
+      background: $primary-color;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+    }
+  }
+}

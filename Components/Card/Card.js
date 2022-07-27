@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Card.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,6 +9,8 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import PostDetails from "../../Components/PostDetails";
 
 const Card = ({ post }) => {
   const [bookmark, setBookmark] = useState(false);
@@ -15,8 +18,11 @@ const Card = ({ post }) => {
   const onclickHandler = () => {
     setBookmark(!bookmark);
   };
+
+  const router = useRouter();
+  const { postid } = router.query;
   return (
-    <div className={styles.hello}>
+    <>
       <div className={styles.card}>
         <div className={styles.cardImg}>
           <img src={post.image} alt={post.title} />
@@ -24,7 +30,11 @@ const Card = ({ post }) => {
         </div>
         <div className={styles.cardContent}>
           <div className={styles.cardTitle}>
-            <h3 className={styles.storeName}>{post.title}</h3>
+            <h3 className={styles.storeName}>
+              <Link href={`/posts/?postid=${post.id}`} as={`/posts/${post.id}`}>
+                {post.title}
+              </Link>
+            </h3>
             <p className={styles.address}>{post.address}</p>
           </div>
           <hr />
@@ -59,7 +69,8 @@ const Card = ({ post }) => {
           </div>
         </div>
       </div>
-    </div>
+      {router.query.postid && <PostDetails id={postid} />}
+    </>
   );
 };
 

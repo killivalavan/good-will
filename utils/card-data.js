@@ -5,7 +5,7 @@ export const data = [
     address: "T.Nagar Chennai",
     postedBy: {
       name: "Tabor",
-      image: "./Images/user.jpg",
+      image: "/Images/user.jpg",
     },
     image: "/Images/image1.png",
   },
@@ -75,7 +75,7 @@ export const data = [
     address: "T.Nagar Chennai",
     postedBy: {
       name: "Tabor",
-      image: "./Images/user.jpg",
+      image: "/Images/user.jpg",
     },
     image: "/Images/image1.png",
   },

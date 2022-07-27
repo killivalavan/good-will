@@ -1,0 +1,47 @@
+@import "../styles/variables";
+
+.uploadBtn {
+  padding: 6rem 8rem;
+  margin: 2rem 0rem;
+  border: 2px dashed $grey-color;
+  small {
+    opacity: 0.5;
+  }
+}
+
+.upload__image {
+  span {
+    opacity: 0.7;
+  }
+}
+
+.wrapper {
+  display: flex;
+  width: 18rem;
+  justify-content: space-between;
+  img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+  button {
+    text-transform: uppercase;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.5rem;
+    margin-right: 0.2rem;
+    color: white;
+    background: $primary-color;
+    border: 2px solid $primary-color;
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+  button:nth-of-type(2) {
+    background: white;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+  }
+}
+
+.errors span {
+  font-size: 0.9rem;
+}
