@@ -1,1 +1,48 @@
 @import "../../styles/variables";
+
+.background {
+  background: #f0f0f0;
+  width: 100%;
+  min-height: 40vh;
+  padding: 2rem 0rem 4rem 0rem;
+  margin-bottom: 2rem;
+  border-bottom: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+  // font-family: "Encode Sans", sans-serif;
+
+  .title {
+    margin-bottom: 1rem;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    p {
+      color: $grey2;
+      margin: 0rem 0.5rem;
+    }
+    button {
+      border-radius: 20px;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: $secondary-color;
+      color: black;
+      border: none;
+    }
+  }
+}
+
+.grid {
+  width: 100%;
+  //   min-height: 70vh;
+  //   margin: 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+  justify-items: center;
+}

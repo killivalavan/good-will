@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-const index = () => {
+const Index = () => {
   const [location, setLocation] = useState("Select your location");
   const [toggle, setToggle] = useState(true);
 
@@ -26,17 +26,10 @@ const index = () => {
 
   // Form submit handler
   const onSubmitHandler = (e) => {
-    // console.log(e.target);
     e.preventDefault();
   };
 
-  // Scroll Fix
-  const { pathname } = useRouter();
-  if (pathname === "/posts") {
-    document.body.style.overflow = "auto";
-  } else {
-    document.body.style.overflow = "hidden";
-  }
+  //
 
   return (
     <div className={styles.styledPost}>
@@ -90,4 +83,14 @@ const index = () => {
   );
 };
 
-export default index;
+// export async function getStaticProps({ data }) {
+//   var ip = "37.46.114.69";
+//   var { country } = geoip.lookup(ip);
+//   return {
+//     props: {
+//       data: country,
+//     },
+//   };
+// }
+
+export default Index;

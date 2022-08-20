@@ -14,7 +14,7 @@ const login = () => {
               <Logo />
             </div>
             <div className={styles.join}>
-              <p>Don't have an account?</p>
+              <p>Don&apos;t have an account?</p>
               <Link href="/joinUs">
                 <button className={styles.joinBtn}>
                   {/* <img src="/Images/user.png" alt="" /> */}

@@ -5,7 +5,7 @@ import { faUser, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const joinPage = () => {
+const JoinPage = () => {
   const router = useRouter();
 
   return (
@@ -42,7 +42,7 @@ const joinPage = () => {
           </div>
           <p>
             Create your free account and start sharing your favourite Seller,
-            Farmer, Store, Hotel, or Bazaar, Let's take this to everyone's eye!
+            Farmer, Store, Hotel, or Bazaar, Lets take this to everyones eye!
           </p>
         </div>
         <div className={styles.rightDiv}>
@@ -76,4 +76,4 @@ const joinPage = () => {
   );
 };
 
-export default joinPage;
+export default JoinPage;

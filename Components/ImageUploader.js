@@ -1,11 +1,11 @@
 import styles from "./ImageUploader.module.scss";
-import React from "react";
+import React, { useState } from "react";
 import ImageUploading from "react-images-uploading";
 
 import { PlusCircleIcon } from "@heroicons/react/outline";
 
-export default function about() {
-  const [images, setImages] = React.useState([]);
+export default function About() {
+  const [images, setImages] = useState([]);
   const maxNumber = 2;
 
   const onChange = (imageList, addUpdateIndex) => {

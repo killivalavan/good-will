@@ -9,18 +9,31 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { useRouter } from "next/router";
-import PostDetails from "../../Components/PostDetails";
+// import { useRouter } from "next/router";
 
 const Card = ({ post }) => {
   const [bookmark, setBookmark] = useState(false);
+  const [seen, setSeen] = useState(1);
 
   const onclickHandler = () => {
     setBookmark(!bookmark);
   };
 
-  const router = useRouter();
-  const { postid } = router.query;
+  // Seen event handler
+  const SeenHandler = () => {
+    setSeen((prevState) => prevState + 1);
+  };
+
+  // Scroll Fix
+  // if (typeof window !== "undefined") {
+  // const { pathname } = useRouter();
+  //   if (pathname === "/posts") {
+  //     document.body.style.overflow = "auto";
+  //   } else {
+  //     document.body.style.overflow = "hidden";
+  //   }
+  // }
+
   return (
     <>
       <div className={styles.card}>
@@ -30,12 +43,14 @@ const Card = ({ post }) => {
         </div>
         <div className={styles.cardContent}>
           <div className={styles.cardTitle}>
-            <h3 className={styles.storeName}>
+            <h3 onClick={SeenHandler} className={styles.storeName}>
               <Link href={`/posts/?postid=${post.id}`} as={`/posts/${post.id}`}>
                 {post.title}
               </Link>
             </h3>
-            <p className={styles.address}>{post.address}</p>
+            <p className={styles.address}>
+              {post.address.street}, {post.address.city}
+            </p>
           </div>
           <hr />
           <div className={styles.user}>
@@ -56,20 +71,19 @@ const Card = ({ post }) => {
 
             <div className={styles.seen}>
               <FontAwesomeIcon className={styles.icon} icon={faEye} />
-              <p>2,800</p>
+              <p>{post.seen}</p>
             </div>
             <div className={styles.review}>
               <FontAwesomeIcon className={styles.icon} icon={faComment} />
-              <p>30</p>
+              {post.reviews && <p>{post.reviews.totalCount}</p>}
             </div>
             <div className={styles.likes}>
               <FontAwesomeIcon className={styles.icon} icon={faHeart} />
-              <p>1,200</p>
+              <p>{post.likes}</p>
             </div>
           </div>
         </div>
       </div>
-      {router.query.postid && <PostDetails id={postid} />}
     </>
   );
 };

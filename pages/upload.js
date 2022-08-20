@@ -7,15 +7,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import ImageUploader from "../Components/ImageUploader";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FormTag from "../Components/FormTag";
 
-const upload = () => {
+const Upload = () => {
   const router = useRouter();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
   };
+
+  // Country Selector
+
+  const [country, setCountry] = useState("");
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get(
+        "https://geolocation-db.com/json/50ad4a90-fd5e-11ec-b463-1717be8c9ff1"
+      );
+      setCountry(data.country_name);
+    };
+    getData();
+  }, []);
 
   return (
     <div className={styles.content}>
@@ -86,8 +101,9 @@ const upload = () => {
                 <input
                   type="text"
                   name="country"
-                  id="country"
+                  className={styles.country}
                   placeholder="Country *"
+                  defaultValue={country}
                 />
 
                 <input
@@ -136,4 +152,4 @@ const upload = () => {
   );
 };
 
-export default upload;
+export default Upload;
