@@ -4,9 +4,34 @@ import {
   faBookmark,
   faShareSquare,
   faShare,
+  faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Image from "next/image";
 
 const AboutSection = ({ post }) => {
+  const [heart, setHeart] = useState(false);
+  const [bookmark, setBookmark] = useState(false);
+
+  const onClickHeart = () => {
+    setHeart(!heart);
+  };
+
+  const onClickBookmark = () => {
+    setBookmark(!bookmark);
+  };
+
+  //Share button
+  const onShareClick = () => {
+    navigator["share"]({
+      title: document.title,
+      text: "Share!",
+      url: window.location.href,
+    })
+      .then(() => console.log("Successful share"))
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className={styles.background}>
       <div className={styles.title}>
@@ -41,7 +66,11 @@ const AboutSection = ({ post }) => {
 
       <div className={styles.cardBottom}>
         <div className={styles.leftDiv}>
-          <button>
+          <button
+            onClick={onClickHeart}
+            style={{ color: heart ? "red" : "grey" }}
+            className={styles.heartIcon}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -56,23 +85,49 @@ const AboutSection = ({ post }) => {
             </svg>
           </button>
           <div className={styles.heart}>
-            {<small>{post.likes}</small> || (
+            {heart ? (
+              <small>{post.likes}</small>
+            ) : (
               <small className={styles.likes}>Like</small>
             )}
           </div>
         </div>
         <div className={styles.cardRightDiv}>
-          <button className={styles.shareBtn}>
-            <span>
-              <FontAwesomeIcon icon={faShare} />
-            </span>
+          <button onClick={onShareClick} className={styles.shareBtn}>
+            <div className={styles.share}>
+              <Image
+                height={100}
+                width={100}
+                src="/Images/share-black.png"
+                alt="bookmark1"
+              />
+              {/* <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> */}
+            </div>
             <p>Share</p>
           </button>
-          <button className={styles.saveBtn}>
-            <span>
-              <FontAwesomeIcon icon={faBookmark} />
-            </span>
-            <p>Save post</p>
+          <button onClick={onClickBookmark} className={styles.saveBtn}>
+            {bookmark ? (
+              <div className={styles.bookmark}>
+                <Image
+                  height={100}
+                  width={100}
+                  src="/Images/bookmark1.png"
+                  alt="bookmark1"
+                />
+              </div>
+            ) : (
+              <div className={styles.bookmark}>
+                <Image
+                  height={100}
+                  width={100}
+                  src="/Images/bookmark2.png"
+                  alt="bookmark2"
+                />
+              </div>
+            )}
+            {/* <FontAwesomeIcon icon={faBookmark} /> */}
+
+            <p>Save Post</p>
           </button>
         </div>
       </div>

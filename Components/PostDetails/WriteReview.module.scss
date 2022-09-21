@@ -1,0 +1,116 @@
+@import "../../styles/variables";
+
+.modal {
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.7);
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+}
+.modalContent {
+  background-color: white;
+  border-radius: 5px;
+  min-height: 40vh;
+  width: 22rem;
+  margin: 9rem auto;
+}
+
+.modalContent {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h2 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  textarea {
+    border: 2px solid $grey-color;
+    outline: none;
+    border-radius: 7px;
+    padding: 0.3rem;
+    resize: none;
+    width: 16rem;
+    font-family: "Roboto", sans-serif;
+  }
+  button {
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding: 0.6rem 6.6rem;
+    border-radius: 7px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    background-color: $secondary-color;
+  }
+}
+.proPic {
+  img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+}
+
+.reactions {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0rem;
+  width: 17rem;
+
+  label {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  input {
+    -webkit-appearance: none; //To hide radio button
+    width: 52px;
+    height: 52px;
+    border: none;
+    cursor: pointer;
+    transition: border 0.2s ease;
+    filter: grayscale(100%);
+
+    &:hover,
+    &:checked {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  .happy input {
+    background-image: url("/Images/reactions/happy.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .good input {
+    background-image: url("/Images/reactions/good.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .average input {
+    background-image: url("/Images/reactions/average.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .sad input {
+    background-image: url("/Images/reactions/sad.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

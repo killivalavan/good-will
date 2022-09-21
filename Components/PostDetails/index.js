@@ -19,17 +19,10 @@ const PostDetails = ({ id }) => {
     router.push("/posts");
   };
 
-  const onShadowClose = (e) => {
-    {
-      e.target.classList.contains("PostDetails_shadow__U_AP_") &&
-        onButtonClose();
-    }
-  };
-
   return (
     <>
       {/* {post && ( */}
-      <div onClick={onShadowClose} className={styles.shadow}>
+      <div className={styles.shadow}>
         <div className={styles.background}>
           <div className={styles.close}>
             <span onClick={onButtonClose}>

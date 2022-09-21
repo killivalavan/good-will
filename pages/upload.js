@@ -19,7 +19,6 @@ const Upload = () => {
   };
 
   // Country Selector
-
   const [country, setCountry] = useState("");
 
   useEffect(() => {
@@ -31,6 +30,14 @@ const Upload = () => {
     };
     getData();
   }, []);
+
+  let [imageUrl, setImageUrl] = useState();
+
+  const uploadHandler = async (e) => {
+    const url = await e.target.files[0];
+    setImageUrl(url);
+    console.log(imageUrl);
+  };
 
   return (
     <div className={styles.content}>
@@ -45,6 +52,8 @@ const Upload = () => {
         <h2>New Post</h2>
       </div>
       <form onSubmit={onSubmitHandler} action="">
+        <input type="file" onChange={uploadHandler} />
+
         <div className={styles.card}>
           <div className={`${styles.leftDiv} ${styles.comFlex}`}>
             {/* <img src="./Images/image1.png" alt="" /> */}
@@ -60,31 +69,7 @@ const Upload = () => {
               rows="5"
               placeholder="About the store *"
             ></textarea>
-            {/* <input type="text" placeholder="Tags/favourite" /> */}
-
-            {/*  */}
-
             <FormTag />
-            {/* <div>
-              <TagsInput
-                className={styles.tags}
-                value={selected}
-                onChange={setSelected}
-                name="tags"
-                placeHolder="Tags/favourite"
-              />
-              <em>press enter to add new tag</em>
-              <style jsx>{`
-                .tags.go2761622576 {
-                  display: none !important;
-                }
-                .rti--container {
-                  --rti-main: "#6ef400";
-                }
-              `}</style>
-            </div> */}
-
-            {/*  */}
           </div>
           <div className={`${styles.comFlex} ${styles.rightDiv}`}>
             <p>Address</p>
@@ -151,5 +136,13 @@ const Upload = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  // Uploading images to S3
+
+  return {
+    props: {},
+  };
+}
 
 export default Upload;

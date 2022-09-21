@@ -4,7 +4,7 @@
   background: #f0f0f0;
   width: 100%;
   min-height: 40vh;
-  padding: 2rem 0rem 4rem 0rem;
+  padding: 2rem 0rem 2rem 0rem;
   margin-bottom: 2rem;
   border-bottom: 5px;
   border-bottom-left-radius: 5px;
@@ -45,4 +45,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, auto));
   justify-items: center;
+}
+
+.loadMore {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
 }
